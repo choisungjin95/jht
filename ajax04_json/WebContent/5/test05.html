@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*
+	var xhr=null;
+	function getList() {
+		xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=getListOk;
+		xhr.open('get','server.jsp',true);
+		xhr.send();
+	}
+	function getListOk() {
+		if(xhr.readyState==4 && xhr.status==200){
+			var xhrList=xhr.responseText;
+			var json=JSON.parse(xhrList);
+			var div=document.getElementById("list");
+			div.innerHTML="";
+			for(var i=0;i<json.length;i++){
+				div.innerHTML+="아이디:"+json[i].id+"<br>"+
+							  "비밀번호:"+json[i].pwd+"<br>"+
+							  "나이:"+json[i].age+"<br>"
+			}
+		}
+	}
+*/
+	var xhr=null;
+	function getList() {
+		xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=getListOk;
+		xhr.open('get','server1.jsp',true);
+		xhr.send();
+	}
+	function getListOk() {
+		if(xhr.readyState==4 && xhr.status==200){
+			var xhrList=xhr.responseText;
+			var json=JSON.parse(xhrList);
+			var div=document.getElementById("list");
+			div.innerHTML="";
+			for(var i=0;i<json.length;i++){
+				div.innerHTML+="글번호:"+json[i].num+"<br>"+
+							  "아이디:"+json[i].id+"<br>"+
+							  "댓글:"+json[i].comments+"<br>"+
+							  "----------------<br>";
+			}
+		}
+	}
+</script>
+</head>
+<body>
+<!-- ajax사용해서 전체 회원목록 div에 출력하기 -->
+<input type="button" value="회원목록" onclick="getList()">
+<div id="list"></div>
+</body>
+</html>
+
+
+
+
+
+
+
