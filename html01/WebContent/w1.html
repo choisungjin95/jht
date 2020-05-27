@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#h{width: 900px; height:150px}
+	.label{width:100px; display: inline-block;}
+	.phone{width:40px;}
+	.phone2{width:80px;}
+	#homepage{width:330px;}
+	#td{width:100px;}
+	#ddd{maign: auto; width:50%;}
+	
+</style>
+</head>
+<body>
+<div>
+	<img src="hw_images/gnb.gif" id="h">
+</div>
+<form>
+	<label for="name" class="label">이름</label>
+	<input type="text" id="name">
+	
+	<label for="phone">전화번호</label>
+	<input type="text" class="phone" id="phone">-
+	<input type="text" class="phone">-
+	<input type="text" class="phone"><br>
+	
+	<label for="homepage" class="label">개인홈페이지</label>
+	<input type="text" value="http://" id="homepage"><br>
+	<label for="id" class="label">아이디</label>
+	<input type="text" id="id"><br>
+	<label for="pwd" class="label">비밀번호</label>
+	<input type="text" id="pwd"><br>
+	<label for="pwd2" class="label">비밀번호확인</label>
+	<input type="text" id="pwd2"><br>
+	
+	<label class="label">핸드폰번호</label>
+	<select>
+		<option value="010">010</option>
+		<option value="011">011</option>
+		<option value="016">016</option>
+		<option value="017">017</option>
+		<option value="019">019</option>
+	</select>
+	<input type="text" class="phone2">-
+	<input type="text" class="phone2">
+	
+	<label for="email">이메일</label>
+	<input type="text" id="email">@
+	<select>
+		<option>daum.net</option>
+		<option>naver.com</option>
+		<option>gmail.com</option>
+	</select><br>
+	
+	<label class="label">직업</label>
+	<select>
+		<option>학생</option>
+		<option>회사원</option>
+		<option>교사</option>
+		<option>무직</option>
+	</select><br>
+	
+	<label class="label">관심분야</label>
+	<input type="radio" name="a" value="개발" checked="checked">
+	개발
+	<input type="radio" name="a" value="인력파견">
+	인력파견
+	<input type="radio" name="a" value="교육">
+	교육
+	<input type="radio" name="a" value="시스템">
+	시스템<br>
+	
+	<table>
+		<tr>
+			<td id="td">기타사항</td>
+			<td><textarea rows="10" cols="50"></textarea></td>
+		</tr>
+		<!-- <label class="label">기타사항</label> -->
+	</table>
+	
+	<label class="label">첨부파일</label>
+	<input type="text" size="50px">
+	<input type="file"><br>
+	
+	<!-- <label>　　　　　　　　　　　　　　　　　　　　　　　　　　　　　</label> -->
+	<div id="ddd">
+		<button type="submit">
+			<img src="hw_images/btn_confirm.gif" class="btn">
+		</button>
+		<button type="reset">
+			<img src="hw_images/btn_cancle.gif" class="btn">
+		</button>
+	</div>
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
