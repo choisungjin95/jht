@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("input[value='아이디찾기']").click(function(){
+			var email=$("#email").val();
+			var pwd=$("#pwd").val();
+			$.ajax({
+				url:"idsearch.jsp",
+				//data:"email=" + email+"&pwd=" + pwd,//파라미터 전달하기
+				data:{"email":email,"pwd":pwd},
+				dataType:"xml",
+				success:function(data){
+					var id=$(data).find("id").text();
+					if(id==""){
+						$("#result").html("아이디를 찾을수 없음");
+					}else{
+						var t="";
+						for(var i=0;i<id.length-3;i++){
+							t+='*';
+						}
+						$("#result").html(id.substr(0, 3)+t);
+					}
+				}
+			})
+		});
+	});
+
+
+
+</script>
+</head>
+<body>
+<!-- 이메일과 비밀번호를 입력해서 아이디를 조회해서 div#result에 보이도록 해보세요.
+id는 앞글자3자리만 보이도록 해보세요. 예시: abc*** -->
+<h1>아이디찾기</h1>
+이메일 <input type="text" id="email"><br>
+비밀번호 <input type="password" id="pwd"><br>
+<input type="button" value="아이디찾기" id="btn1">
+<div id="result"></div>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test02_quiz.html</title>
+</head>
+<body>
+<div id="newsbox"></div>
+</body>
+<script>
+	var news=["첫날 사전투표율 오전 9시 현재 1.51%…동시간대 역대 최고치",
+			  "정총리 부활절 집회 걱정돼",
+			  "정부 \"주력산업 위기 극복 지원 방안 적극 모색\"",
+			  "코로나19로 정신건강도 위기",
+			  "검찰 신라젠 수사 본격화"];
+	//1초에 한번씩 뉴스를 div에 출력되도록 해보세요.
+	setInterval(showNews,1000);
+	var index=0;
+	function showNews(){
+		var div=document.getElementById("newsbox");
+		div.innerHTML=news[index++ % news.length];
+	}
+</script>
+</html>
+
+
+
+
+
+
+
+

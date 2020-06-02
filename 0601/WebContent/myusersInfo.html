@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>가입일</h1>
+<form>
+	<input type="date" name="regdate" id="regdate">
+	<input type="submit" value="확인" onclick="myusersInfo()">
+</form>
+<div id="result"></div>
+</body>
+<script type="text/javascript">
+	var xhr=null;
+	function myusersInfo() {
+		var regdate=document.getElementById("regdate").value;
+		xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=InfoOk;
+		xhr.open('get','/0601/myusers/info?regdate='+regdate,true);
+		xhr.send();
+	}
+	function InfoOk() {
+		if(xhr.readyState==4 && xhr.status==200){
+			var div=document.getElementById("result");
+			var data=xhr.responseText;
+			var json=JSON.parse(data);
+			for(var i=0;i<json.length;i++){
+				div.innerHTML="아이디:"+json[i].id+"<br> 비밀번호:"+json[i].pwd
+				+"<br>이메일:"+json[i].email+"<br>가입일:"+json[i].regdate+"<br>";
+			}
+		}
+	}
+</script>
+</html>
+
+
+
+
+
+
+

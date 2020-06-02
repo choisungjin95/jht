@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test08_String.html</title>
+<script type="text/javascript">
+	var str="hello world!";
+	console.log("문자열길이:" + str.length);
+	var a=str.charAt(1);//1번째 위치 글자 꺼내오기
+	console.log("2번째 글자:" + a);
+	var b=str.substr(1,4);//1번째부터 글자4개 꺼내오기
+	console.log(b);
+	var c=str.substring(1,4);//1번째부터 4번째(-1) 위치의 글자꺼내오기
+	console.log(c);
+	var i=str.indexOf("e"); //문자 "e"의 위치 찾기
+	console.log("문자e의 위치:" + i);
+	
+	function showData(){
+		var id=document.getElementById("id");
+		if(!(id.value.length>=5 && id.value.length<=9)){
+			alert("아이디를 5~9자 사이로 입력해 주세요!");
+			id.value="";//입력된 값 지우기
+			id.focus();//포커스 주기
+			return;//메소드 끝내기
+		}
+		//아이디가 모두 영문소문자로 이루어졌는지 검사해 보세요.
+		for(var i=0;i<id.value.length;i++){
+			var ch=id.value.charAt(i);
+			if(!(ch>='a' && ch<='z')){
+				alert("아이디는 영문소문자로만 입력해 주세요.");
+				return;
+			}
+		}
+		var pwd=document.getElementById("pwd").value;
+		if(pwd.length<5){
+			alert("비밀번호는 5자이상 입력!");
+			return;//메소드 끝내기
+		}
+		for(var i=0;i<pwd.length;i++){
+			var ch=pwd.charAt(i);
+			if(!(ch>=0 && ch<='9')){
+				alert("비밀번호는 숫자로만 입력하세요.");
+				return;
+			}
+		}
+		var email=document.getElementById("email").value;
+		var n=email.indexOf("@");
+		if(n==-1){
+			alert("이메일에 @가 포함되어야 합니다..");
+			return;
+		}
+		document.getElementById("result").innerHTML="입력된 아이디:" + id.value;		
+	}
+</script>
+</head>
+<body>
+아이디(5~9자 사이) <input type="text" id="id"><br>
+<!-- 비밀번호는 5자이상이고 모두 숫자로 이루어 졌는지 검사해 보세요. -->
+비밀번호(5자이상) <input type="password" id="pwd"><br>
+<!-- 이메일에 @가 포함되었는지 검사해 보세요. -->
+이메일 <input type="text" id="email"><br>
+<input type="button" value="확인" onclick="showData()">
+<div id="result">
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

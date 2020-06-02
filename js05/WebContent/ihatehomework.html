@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ihatehomework.html</title>
+</head>
+<style>
+ img{border: 2px solid red;}
+</style>
+
+<body>
+	<div id = "imglist">
+	<img src="images/1.png">
+	<img src="images/2.png">
+	<img src="images/3.png">
+	<img src="images/4.png">
+	<img src="images/5.png"><br>
+	</div>
+
+
+<div id= "btns" style = "margin-left:400px">	
+<input type="button" value="<<" id = "pre">
+<input type="button" value=">>" id = "next">
+</div>
+</body>
+<script>
+	
+	var pnum=6;
+	
+	function nextImg() {
+		var imglist=document.getElementById("imglist");
+		imglist.innerHTML="";
+		var next=document.getElementById("next");
+		
+		for (var i = 0; i <5; i++) {
+			var img=document.createElement('img');
+			img.src="images/"+pnum++ + ".png";
+			imglist.appendChild(img);
+			if(pnum>15)
+			pnum=1;
+		}
+		
+	}
+	
+	function preImg() {
+		var imglist=document.getElementById("imglist");
+		imglist.innerHTML="";
+		var pre=document.getElementById("pre");
+		for (var i = 0; i <5; i++) {			
+			var img=document.createElement("img");
+			img.src="images/"+pnum-- + ".png";
+			imglist.appendChild(img);
+			if(pnum<1)
+				pnum=15;
+		}
+		
+	
+	}
+
+	var next1=document.getElementById("next");
+	next1.addEventListener('click',nextImg);
+	var pre1=document.getElementById("pre");
+	pre1.addEventListener('click',preImg);
+	
+	
+		
+	
+
+</script>
+</html>

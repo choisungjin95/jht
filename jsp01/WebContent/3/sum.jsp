@@ -4,14 +4,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>sum.jsp</title>
 </head>
 <body>
 <%
-	String num1=request.getParameter("num1");
-	String num2=request.getParameter("num2");
-	int sum=Integer.parseInt(num1)+Integer.parseInt(num2);
+	int num1=Integer.parseInt(request.getParameter("num1"));
+	int num2=Integer.parseInt(request.getParameter("num2"));
+	int num3=num1+num2;
 %>
-두 정수의 합=<%=sum %>
+<%=num1 %> + <%=num2 %> = <%=num3 %>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+

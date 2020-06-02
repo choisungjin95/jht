@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+#wrap{width:250px;height: 170px; padding:10px;background-color: orange;}
+</style>
+<title>숙제1</title>
+<script type="text/javascript">
+
+	function calc() {
+		var kor=document.getElementById("kor");
+		var eng=document.getElementById("eng");
+		var math=document.getElementById("math");
+		var tot=document.getElementById("tot");		
+		var avg=document.getElementById("avg");	
+		if (parseInt(kor.value)>100 || parseInt(eng.value)>100 || parseInt(math.value)>100) {
+			alert("점수가 100점을 넘을순 없는데요ㅋㅋㅋ")
+			kor.value="";
+			eng.value="";
+			math.value="";
+			kor.focus();
+			eng.focus();
+			math.focus();
+			return;
+		}
+		tot.value=getTot(parseInt(kor.value),parseInt(eng.value),parseInt(math.value));
+		avg.value=getAvg(parseInt(tot.value));
+		rank.value=getRank(parseInt(avg.value));
+
+	}
+
+	function getTot(kor,eng,math) {
+		//tot=(kor.value+eng.value+math.value);	
+		return kor+eng+math;
+	}
+	function getAvg(tot){
+		//avg=(tot.value/3);
+		return tot/3;
+	}
+	function getRank(avg) {
+		if (avg>=90) {
+			return 'A';		
+		}else if (avg>=80) {
+			return 'B';		
+		}else if (avg>=70) {
+			return 'C';
+		}else if (avg>=60) {
+			return 'D';
+		}else if (avg<60) {
+			return 'F';
+		}
+	}
+	function del() {
+		kor.value="";
+		eng.value="";
+		math.value="";
+		tot.value="";
+		avg.value="";
+		rank.value="";
+		kor.focus();
+		eng.focus();
+		math.focus();
+		tot.focus=();
+		avg.focus=();
+		rank.focus=();
+	}
+</script>
+</head>
+<body>
+<div id="wrap">
+국어<input type="text" id="kor"><br>
+영어<input type="text" id="eng"><br>
+수학<input type="text" id="math"><br>
+<input type="button" value="계산" onclick="calc()">
+<input type="button" value="지우기" onclick="del()"><br>
+총점<input type="text" id="tot"><br>
+평균<input type="text" id="avg"><br>
+학점<input type="text" id="rank"><br>
+</div>
+</body>
+</html>

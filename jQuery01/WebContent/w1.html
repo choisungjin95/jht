@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#btn").click(function(){
+			var num1=parseInt($("#num1").val());
+			var num2=parseInt($("#num2").val());
+			var sum=num1+num2;
+			$("#sum").val(sum);
+		})
+	});
+</script>
+</head>
+<body>
+<input type="text" id="num1">+
+<input type="text" id="num2">=
+<input type="text" id="sum">
+<input type="button" value="합구하기" id="btn">
+</body>
+</html>

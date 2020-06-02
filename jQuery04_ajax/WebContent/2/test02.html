@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2/test02.html</title>
+<style>
+	#emplist div{
+		border:1px solid;
+		width: 250px;
+		height: 100px;
+		margin-bottom: 10px;
+	}
+	.select{
+		background-color: skyblue;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$.ajax({
+			url:"quiz.xml",
+			dataType:"xml",
+			success:function(data){
+				$(data).find("employee").each(function(){
+					var firstName=$(this).find("firstName").text();
+					var lastName=$(this).find("lastName").text();
+					var id=$(this).find("id").text();
+					$("<div></div>")
+					.html(firstName+" "+lastName+" id:"+id)
+					.appendTo("#emplist")
+				});
+				$("#emplist").on('mouseover mouseout',"div",function(){
+					$(this).toggleClass("select");
+				})
+			}
+		});
+		
+	});
+</script>
+</head>
+<body>
+<!-- 
+ajax를 사용해서 quiz.xml의 모든 사원이름(firstName + lastName)과
+id를 div에 추가되도록 해보세요.
+사원정보에 마우스오버되면 배경색상이 변경되도록 해보세요.
+-->
+<div id="emplist"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

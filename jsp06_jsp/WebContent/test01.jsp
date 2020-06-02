@@ -7,14 +7,14 @@
 <title>test01.jsp</title>
 </head>
 <body>
-<h1>test01/jsp</h1>
+<h1>test01.jsp</h1>
 <%//스크립트릿
 	String name="홍길동";
 	out.write("name:" + name +"<br>");
 %>
-<%-- //jsp주석
+<%--  //jsp주석
 <%
-	//String name="김길동";
+	String name="김길동";
 %>
 --%>
 <!-- sum.jsp에서 두수합 구해서 출력해 보세요. -->
@@ -25,3 +25,10 @@
 </form>
 </body>
 </html>
+
+
+
+
+
+
+

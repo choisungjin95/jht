@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>!!!!!!!!!!!!숙제!!!!!!!!!!</title>
+<style>
+	#bottom{width:1000px; height:400px; background-color:pink;}
+</style>
+<script>
+	function changeImg(value){
+		var img = document.getElementById("img");
+		img.src= value;	
+	}
+
+	window.onload=function(){
+		var btn = document.getElementById("btn");
+		btn.addEventListener('click',function(){
+
+			var img = document.createElement("img");
+			var list = document.getElementById("list");
+			img.src ="images/" + (list.selectedIndex+1) + ".png";
+			
+			var div =document.getElementById("bottom");
+			div.appendChild(img);
+
+			img.addEventListener("dblclick",function(){
+				img.remove()
+			});
+		});
+	}
+</script>
+</head>
+<body>
+<h1>인형가게</h1><br>
+<select id="list" size="4" style="width:150px; height:150px"; onclick="changeImg(this.value)">
+	<option value= "images/1.png" checked="checked">소년 </option>
+	<option value= "images/2.png">커피 </option>
+	<option value= "images/3.png">강아지1 </option>
+	<option value= "images/4.png">강아지2</option>
+</select>
+
+<img src= "images/1.png" id="img"><br>
+<input type="button" value="담기" id= "btn"><br><br><br>
+<div id = "bottom">
+	<h2>장바구니</h2>
+</div>
+</body>
+</html>

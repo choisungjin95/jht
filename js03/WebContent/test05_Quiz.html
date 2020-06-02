@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test05_Quiz.html</title>
+<script>
+	setTimeout(changeImg,1000);
+	var n=1;
+	function changeImg(){
+		var img1=document.getElementById("img1");
+		img1.src="images/" + ++n +".jpg";
+		if(n==5) n=0;
+		setTimeout(changeImg,1000);
+	}
+</script>
+</head>
+<body>
+<!--1초에 한번씩 이미지를 변경해서 보이도록 해보세요.(1.jpg ~ 5.jpg) -->
+<img src="images/1.jpg" id="img1" style="width:400px;height: 250px;">
+</body>
+</html>

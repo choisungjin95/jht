@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>home_work01.html</title>
+<style>
+	#main{position: absolute; width:440px;height: 500px;}
+	#main #mainL{margin-left:5px;float: left;}
+	#main #mainR{float:right}
+</style>
+<script>
+	function getJumin(){
+		var jumin = document.getElementById("jumin");
+		var ju = jumin.value;
+		var juSplit=ju.split("");
+		var juSplit1=[];
+		for(var i=0;i<juSplit.length;i++){
+			if(!(juSplit[i] == "-")){
+				juSplit1.push(juSplit[i]);
+			}
+		}
+		var num=[2,3,4,5,6,7,8,9,2,3,4,5];
+		var sum=0;
+		for(var i=0;i<num.length;i++){
+			sum += num[i]*juSplit1[i];
+		}
+		var num1=11-(sum%11);
+		if(num1>9 ){
+			num1 = 10-num1;
+		}
+		if(!(num1 == juSplit1[juSplit1.length-1])){
+			alert("주민번호가 정확하지 않습니다.");
+			jumin.value="";
+			jumin.focus();
+			return;
+		}
+		var birth = document.getElementById("birth");
+		birth.value = juSplit1[0]+juSplit1[1]+"년"+juSplit1[2]+juSplit1[3]+"월"+juSplit1[4]+juSplit1[5]+"일";
+
+		if(juSplit1[6]=='1' || juSplit1[6] =="3"){
+			var id = document.getElementById("men");
+			id.selected="selected";
+		}else{
+			var id = document.getElementById("wo");
+			id.selected="selected";
+		}
+	}
+	function getId(){
+		var id = document.getElementById("id");
+		var id1 = document.getElementById("id1");
+		if(id.value.length <5 ){
+			id.value="";
+			id.focus();
+			alert("5자리가 넘어야 합니다.");
+			return;
+		}
+		var idSplit=id.value.split("");
+		for(var i=0;i<idSplit.length;i++){
+			if(!(idSplit[i]>='a'&&idSplit[i]<='z'||idSplit[i]>='A'&&idSplit[i]<='Z'||idSplit[i]>='0'&&idSplit[i]<='9')){
+				id.value="";
+				id.focus();
+				alert("영문이나 숫자로 이루워져야합니다.");
+				return;
+			}
+		}
+		id1.value="사용가능";
+	}
+	function userJoin(){
+		var email = document.getElementById("email");
+		if(email.value.indexOf("@") == -1){
+			email.value="";
+			email.focus();
+			alert("이메일을 확인 해주세요.");
+			return;
+		}
+		var phone = document.getElementById("phone");
+		if(!(phone.value.indexOf("-") == -1)){
+			phone.value="";
+			phone.focus();
+			alert("전화번호는 - 를 생략해주세요.");
+			return;
+		}
+		alert("가입이 완료되었습니다.");
+		//userCancle();
+	}
+	function userCancle(){
+		var id = document.getElementById("id");
+		var pwd = document.getElementById("pwd");
+		var email = document.getElementById("email");
+		var jumin = document.getElementById("jumin");
+		var birth = document.getElementById("birth");
+		var phone = document.getElementById("phone");
+		var addr = document.getElementById("addr");
+		id.value="";
+		pwd.value="";
+		email.value="";
+		jumin.value="";
+		birth.value="";
+		phone.value="";
+		addr.value="";
+		id.focus();
+	}
+</script>
+</head>
+<body>
+	<form action="">
+		<div id="main">
+			<div id="mainL">
+				아이디 <br>
+				비밀번호 <br>
+				이메일 <br>
+				주민등록번호 <br>
+				생년월일 <br>
+				전화번호 <br>
+				주소 <br>
+				성별 <br><br>
+				<input type="submit" value="JOIN" onclick="userJoin()">
+				<input type="reset" value="CANCLE" onclick="userCancle()"><br>
+			</div>
+			<div id="mainR">
+				<input type="text" id="id">
+				<input type="button" value="ID확인" id="id1" onclick="getId()"><br>
+				<input type="text" id="pwd"><br>
+				<input type="text" id="email"><br>
+				<input type="text" id="jumin">
+				<input type="button" value="주민번호확인" onclick="getJumin()"><br>
+				<input type="text" id="birth"><br>
+				<input type="text" id="phone"><br>
+				<input type="text" id="addr"><br>
+				<select id="sex" size="1">
+					<option value="여자" id="wo">여자</option>
+					<option value="남자" id="men">남자</option>
+				</select><br>
+			</div>
+		</div>
+	</form>
+</body>
+</html>

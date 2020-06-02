@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		alert("jQuery준비완료!");
+		$("#btn1").click(function(){
+			alert("버튼을 클릭했군요!");
+		});
+		$("#btn2").click(function(){
+			//$("#div1").hide(1000);
+			//$("#div1").fadeIn(1000);
+			$("#div1").fadeOut(1000);
+		})
+		$("#btn3").click(function(){
+			//$("#div1").slideDown(1000);
+			$("#div1").fadeIn(1000);
+		})
+		$("#btn4").click(function(){
+			$("#div1").slideToggle(1000);
+		})
+	});
+
+	
+
+</script>
+</head>
+<body>
+<input type="button" value="btn1" id="btn1">
+<input type="button" value="hide" id="btn2">
+<input type="button" value="show" id="btn3">
+<input type="button" value="toggle" id="btn4">
+<div id="div1" style="width:300px;height:200px;background-color: orange;">
+	안녕 jQuery!
+</div>
+</body>
+</html>
+
+
+
+
+
+
+

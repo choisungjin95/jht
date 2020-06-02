@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	input{
+		width: 130px;
+		height: 25px;
+		color: white;
+		background-color: green;
+	}
+	#div{
+		margin-top:10px;
+		width: 400px;
+		height: 300px;
+		border: 1px solid;
+		background-color: orange;
+	}
+</style>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#btn1").click(function(){
+			$("div").html("도서상품은 어쩌구..");
+		});
+		$("#btn2").click(function(){
+			$("div").html("영화는 어쩌구..");
+		});
+		$("#btn3").click(function(){
+			$("div").html("음악은 어쩌구..");
+		});
+	});
+</script>
+</head>
+<body>
+<input type="button" value="도서" id="btn1">
+<input type="button" value="영화" id="btn2">
+<input type="button" value="음악" id="btn3">
+<div id="div"></div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var w=0;
+		$("#btn").click(function(){
+			$("#img").css("position","absolute");
+			$("#img").css("left",w+=50);
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="button" value="go" id="btn"><br>
+	<img src="images/001.jpg" id="img">
+</body>
+</html>

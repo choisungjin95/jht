@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test07_quiz.html</title>
+<script>
+	function sub() {
+		var id=document.getElementById("id");
+		if(id.value==""){
+			id.focus();
+			return false;
+		}
+		var pwd1=document.getElementById("pwd1");
+		if(pwd1.value==""){
+			pwd1.focus();
+			return false;
+		}
+		var pwd2=document.getElementById("pwd2");
+		if(!(pwd2.value==pwd1.value)){
+			alert("확인 비밀번호가 맞지 않습니다");
+			return false;
+		}
+		var a=0;
+		var box=document.getElementsByName("hobby");
+		for (var i = 0; i < box.length; i++) {
+			if(box[i].checked==true){
+				a+=1;
+			}
+		}
+		if(a==0){
+			return false;
+		}
+		return true;
+	}
+</script>
+</head>
+<body>
+<h1>회원가입</h1>
+	<!--입력된 비밀번호가 일치하는지 확인하기/ 취미가 하나이상 선택된 경우만
+	서버로 데이터 전송하기-->
+	<form action="join.jsp" onsubmit="return sub();">
+		아이디(*) 
+		<input type="text" name="id" id="id" ><br>
+		비밀번호(*) 
+		<input type="password" name="pwd" id="pwd1" ><br>
+		비밀번호확인(*) 
+		<input type="password" name="pwd" id="pwd2" ><br>
+		취미
+		<input type="checkbox" name="hobby" value="영화">영화
+		<input type="checkbox" name="hobby" value="여행">여행
+		<input type="checkbox" name="hobby" value="게임">게임
+		<input type="checkbox" name="hobby" value="없음">없음
+		<br>
+		<input type="submit" value="가입">
+	</form>
+</body>
+</html>
+
+
+
+

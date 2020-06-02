@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#frm").submit(function(e){
+			e.preventDefault();//submit이 안됨
+			//var pwd=$("input[name='pwd']").val();
+			//var email=$("input[name='email']").val();
+			var params=$(this).serialize();
+			console.log(params);
+			//ajax로 데이터 전송받기
+			$.ajax({
+				url:"../4/idsearch.jsp",
+				//data:{"pwd":pwd,"email":email},
+				data:params,
+				success:function(data){
+					var using=$(data).find("using").text();
+					if(eval(using)==true){
+						let id=$(data).find("id").text();
+						$("#result").html("당신의 아이디:" + id );
+					}else{
+						$("#result").html("찾는 정보가 없습니다...");
+					}
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+<form id="frm" action="../4/idsearch.jsp">
+	비밀번호 <input type="password" name="pwd"><br>
+	이메일 <input type="text" name="email"><br>
+	<input type="submit" value="아이디찾기">
+</form>
+<div id="result"></div>
+</body>
+</html>

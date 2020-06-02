@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function getAddr(){
+		var names=document.getElementsByName("name");
+		var addr=document.getElementsByName("addr");
+		var check=document.getElementsByName("check")[0];
+		if(check.checked==true){
+			names[1].value=names[0].value;
+			addr[1].value=addr[0].value;
+		}else{
+			names[1].value="";	
+			addr[1].value="";
+		}
+	}
+	function getAddr1(check){
+		var names=document.getElementsByName("name");
+		var addr=document.getElementsByName("addr");
+		if(check==true){
+			names[1].value=names[0].value;
+			addr[1].value=addr[0].value;
+		}else{
+			names[1].value="";	
+			addr[1].value="";
+		}	
+	}
+</script>
+</head>
+<body>
+회원이름<input type="text"  name="name"><br>
+회원주소<input type="text"  name="addr" size="50"><br>
+<input type="checkbox" value="위와동일" name="check" 
+         onclick="getAddr1(this.checked)">위와동일<br>
+받는사람<input type="text" name="name"><br>
+받는주소<input type="text" name="addr" size="50"><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test01_timer.html</title>
+<style>
+	#box{width:300px;height: 200px;background-color:orange ;}
+</style>
+<script>
+	/*
+		setInterval(호출할함수,반복주기)
+		- 함수가 반복주기마다 호출됨
+		clearInterval(타이머아이디)
+		- 반복주기마다 함수를 호출하는 기능 멈춤
+	*/
+	var tid=setInterval(changeColor,1000);//1초마다 changeColor함수호출
+	var colors=["green","yellow","orange"];
+	var i=0;
+	function changeColor(){
+		var box=document.getElementById("box");
+		box.style.backgroundColor=colors[i++];
+		if(i==colors.length) i=0;
+	}
+	function stopChange(){
+		clearInterval(tid);
+	}
+	setInterval(showTime,1000);
+	function showTime(){
+		var d=new Date();
+		var str=d.getHours()+"시" + d.getMinutes() +"분" + d.getSeconds()+ "초";
+		document.getElementById("time").value=str;
+	}
+
+</script>	
+</head>
+<body>
+<!-- 현재 시간 출력하기 -->
+현재시간 <input type="text" id="time" readonly="readonly"><br><br>
+<!--색상변경버튼을 클릭하면 배경색 바꾸기 -->
+<input type="button" value="색상변경" onclick="changeColor()">
+<input type="button" value="변경멈춤" onclick="stopChange()">
+<div id="box"></div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

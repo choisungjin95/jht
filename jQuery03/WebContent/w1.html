@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+</head>
+<body>
+<h1>회원가입</h1>
+<form action="join.jsp">
+	아이디 <input type="text" name="id"><br>
+	비밀번호 <input type="text" name="pwd"><br>
+	이메일 <input type="text" name="email"><br>
+	<fieldset>
+		<legend>취미</legend>
+		<input type="checkbox" value="노래하기" name="hobby">노래하기
+		<input type="checkbox" value="잠자기" name="hobby">잠자기
+		<input type="checkbox" value="게임하기" name="hobby">게임하기
+		<input type="checkbox" value="영화보기" name="hobby">영화보기
+	</fieldset>
+	<br>
+	<fieldset>
+		<legend>사는곳</legend>
+		<input type="radio" value="서울" name="addr">서울
+		<input type="radio" value="대구" name="addr">대구
+		<input type="radio" value="부산" name="addr">부산
+		<input type="radio" value="기타" name="addr">기타
+	</fieldset>
+	<br>
+	<input type="submit" value="가입">
+	<input type="button" value="취소">
+</form>
+</body>
+<script type="text/javascript">
+	$("form").submit(function(){
+		var id=$("input[name='id']").val();
+		var pwd=$("input[name='pwd']").val();
+		var email=$("input[name='email']").val();
+		var chk=$("input:checkbox[name=hobby]:checked").length;
+		if(id==""){
+			alert("아이디를 입력하세요");
+			return false;
+		}else if(pwd==""){
+			alert("비밀번호를 입력하세요");
+			return false;
+		}else if(email==""){
+			alert("이메일을 입력하세요");
+			return false;
+		}else if(chk==0){
+			alert("취미는 1개이상 선택하세요");
+			return false;
+		}else if($("input[name=addr]:checked").is(':checked')==false){
+			alert("사는곳을 선택하세요");
+			return false;
+		}
+	});
+</script>
+</html>
+
+
+
+
+
+
+
+

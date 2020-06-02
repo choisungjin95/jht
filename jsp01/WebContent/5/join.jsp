@@ -17,8 +17,7 @@
 	String num=request.getParameter("num");
 	String name=request.getParameter("name");
 	String phone=request.getParameter("phone");
-	String addr=request.getParameter("addr");
-	
+	String addr=request.getParameter("addr");	
 	//2. 사용자정보를 DB에 저장하기
 	Connection con=null;
 	PreparedStatement pstmt=null;
@@ -26,7 +25,7 @@
 	try{
 		Class.forName("oracle.jdbc.OracleDriver");
 		String url="jdbc:oracle:thin:@localhost:1521:xe";
-		con=DriverManager.getConnection(url, "scott", "tiger");
+		con=DriverManager.getConnection(url,"scott","tiger");
 		String sql="insert into members values(?,?,?,?,sysdate)";
 		pstmt=con.prepareStatement(sql);
 		pstmt.setString(1,num);
@@ -56,7 +55,6 @@
 <a href="main.jsp">메인페이지로 이동</a>
 </body>
 </html>
-
 
 
 

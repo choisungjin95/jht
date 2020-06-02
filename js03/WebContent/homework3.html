@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#img1{width: 200px; height: 150px; opacity: 0.3;}
+	#img2{width: 200px; height: 150px; opacity: 0.3;}
+	#img3{width: 200px; height: 150px; opacity: 0.3;}
+	#img4{width: 200px; height: 150px; opacity: 0.3;}
+	#mainimg{width: 400px; height: 300px; padding-left: 210px;}
+</style>
+<script>
+	function showimg(aaa){			// 클릭한 img 정보 aaa에 담기 --> this로 받았기 때문에
+		var mainimg = document.getElementById("mainimg");		// mainimg를 가져옴
+		mainimg.src = aaa.src									// main과 aaa img 같게 만듦
+		var img = document.getElementsByName("img");			// name이 img인거 img에 넣음
+		
+		for(var i = 0; i< img.length; i++){						// 전체 img의 opacity를 0.3으로
+			img[i].style.opacity = "0.3";
+		}
+		if(aaa.src == mainimg.src){								// 같은 것만 opacity를 1로 바꿈
+			aaa.style.opacity = "1";
+		}
+	}
+</script>
+</head>
+<body>
+	<div id = "imgs">
+		<img src = "images/1.jpg" onclick="showimg(this)" id = "img1" name = "img">
+		<img src = "images/2.jpg" onclick="showimg(this)" id = "img2" name = "img">
+		<img src = "images/3.jpg" onclick="showimg(this)" id = "img3" name = "img">
+		<img src = "images/4.jpg" onclick="showimg(this)" id = "img4" name = "img">
+		<br><br>
+		<img id = "mainimg">
+	</div>
+</body>
+</html>

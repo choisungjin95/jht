@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test02_comments.html</title>
+<style>
+	#commAdd{display: none;}
+	.commDiv{
+		width:300px;
+		height: 150px;
+		border:2px solid green;
+		margin:10px;
+	}
+</style>
+</head>
+<body>
+<div id="commList"></div>
+<!--방명록쓰기 버튼을 클릭하면 div#commAdd 보이기-->
+<input type="button" value="방명록쓰기" id="btn1">
+<input type="button" value="댓글모두지우기" id="btn2">
+<div id="commAdd">
+	작성자<br>
+	<input type="text" id="writer"><br>
+	내용<br>
+	<textarea rows="5" cols="40" id="content"></textarea>
+	<br>
+	<input type="button" value="등록" id="addBtn">
+	<input type="button" value="취소" id="cancelBtn">
+</div>
+</body>
+<script>
+	var btn1=document.getElementById("btn1");
+	btn1.onclick=function(){
+		var commAdd=document.getElementById("commAdd");
+		commAdd.style.display="block";
+	}
+	var addBtn=document.getElementById("addBtn");
+	addBtn.onclick=function(){
+		var commList=document.getElementById("commList");//댓글추가될 div
+		var div=document.createElement("div");
+		var writer=document.getElementById("writer");
+		var content=document.getElementById("content");
+		div.innerHTML="작성자:" + writer.value +"<br>" +
+					  "내용:" + content.value;
+		div.className="commDiv";//생성된 div에 클래스설정하기 
+		commList.appendChild(div);	
+		div.onmouseover=function(e){
+			e.target.style.backgroundColor="#aaa";	
+		}
+		div.onmouseout=function(e){
+			e.target.style.backgroundColor="#fff";	
+		}
+		var commAdd=document.getElementById("commAdd");
+		writer.value="";
+		content.value="";//입력된 내용 지우기
+		commAdd.style.display="none";//댓글입력창 숨기
+	}
+	var btn2=document.getElementById("btn2");
+	btn2.onclick=function(){
+		var commList=document.getElementById("commList");
+		var childNodes=commList.childNodes;//모든 자식객체 얻어오기
+		for(let i=childNodes.length-1;i>=0;i--){
+			var commDiv=childNodes.item(i);//i번째 요소객체 얻어오기
+			commList.removeChild(commDiv);//자식객체 제거하기
+		}
+	}
+</script>
+</html>
+
+
+
+
+
+
+

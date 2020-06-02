@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function css1(){
+		var color=document.getElementById("color").value;
+		var w=document.getElementById("w").value;
+		var h=document.getElementById("h").value;
+		var div=document.getElementById("div1");
+		div.style.backgroundColor=color;
+		div.style.width=w;
+		div.style.height=h;	
+	}
+</script>
+</head>
+<body>
+색상 <input type="text" id="color"><br>
+가로 <input type="text" id="w"><br>
+세로 <input type="text" id="h"><br>
+<input type="button" onclick="css1()" value="적용"><br>
+<div id="div1" style="width:200px;height:200px;border:2px solid green">
+</div>
+</body>
+</html>
+
+
+
+
+
+
+

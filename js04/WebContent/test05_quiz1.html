@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#box{width:800px; height:800px; border:2px solid blue;
+	position: absolute;left:200px;top:200px;overflow: hidden;}
+	#img1{position:absolute;left:0px;top:0px;width:200px;height:200px;background-color: orange;}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		const div=document.getElementById("box");
+		div.onclick=function(e){
+			var x=e.clientX;
+			var y=e.clientY;
+			var img1=document.getElementById("img1");
+			var box=document.getElementById("box");
+			var offX=box.offsetLeft;//화면 left에서 떨어진 좌표값 
+			var offY=box.offsetTop;//화면 top에서 떨어진 좌표값 
+		//	var width=img1.width;
+		//	console.log(width/2);
+			img1.style.left = ((x-100)-offX) + "px";
+			img1.style.top = ((y-100)-offY) + "px";
+		}
+	}	
+</script>
+</head>
+<body>
+<div id="box" >
+	<img src="images/2.png" id="img1" >
+</div>
+</body>
+</html>
+
+
+
+
+
+

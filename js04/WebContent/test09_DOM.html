@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<input type="button" value="버튼생성" id="button">
+<div id="btnList">
+</div>
+<!--이미지생성버튼을 클릭하면 이미지5개를 한꺼번에 생성후
+마우스가 오버되면 이미지에 보더가 생기도록 해보세요.
+-->
+<input type="button" value="이미지생성" id="button1">
+<div id="imgList">
+</div>
+</body>
+<script>
+	const button1=document.getElementById("button1");
+	button1.addEventListener('click',addImg);	
+	function addImg(){
+		const imgList=document.getElementById("imgList");
+		for(let i=1;i<=5;i++){
+			let img=document.createElement("img");
+			img.src="images/" + i +".png";
+			imgList.appendChild(img);
+			img.addEventListener('mouseover',function(e){
+				this.style.border="2px solid red";
+			});
+			img.addEventListener('mouseout',function(e){
+				this.style.border="none";
+			});
+		}
+		//버튼을 클릭했을때 이벤트리스너 제거하
+		button1.removeEventListener('click',addImg);
+	}
+
+	var button=document.getElementById("button");
+	var num=1;
+	button.addEventListener('click',function(){
+		//버튼을 생성해서 btnList에 붙여 보세요.
+		var btnList=document.getElementById("btnList");
+		var btn=document.createElement("input");
+		btn.type="button";
+		btn.value="버튼" + num++;
+		btn.addEventListener('click',function(){
+			alert(this.value +"를 클릭했어요~");
+		});
+		btnList.appendChild(btn);		
+	});
+</script>
+</html>
+
+
+
+
+
+
+
+

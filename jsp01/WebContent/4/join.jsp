@@ -4,18 +4,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>join.jsp</title>
 </head>
 <body>
 <%
-	//한글이 깨지지 않도록 인코딩 설정하기(post방식인경우) 꼭 해줘야함
+    //한글이 깨지지 않도록 인코딩설정하기(post방식인경우)
 	request.setCharacterEncoding("utf-8");
 	String num=request.getParameter("num");
 	String name=request.getParameter("name");
 	String phone=request.getParameter("phone");
+	
 %>
-번호:<%=num %><br>
-이름:<%=name %><br>
-전화번호:<%=phone %><br>
+번호 : <%out.print(num);%><br> <%=num %>
+이름 : <%=name %><br>
+전화번호 : <%=phone %><br>
 </body>
 </html>
+
+
+
+
+
+
+

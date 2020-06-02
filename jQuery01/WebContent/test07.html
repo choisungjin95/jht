@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(window).ready(function(){
+		$("#chk").click(function(){
+			var chk=$("#chk").prop("checked");
+			if(chk){
+				$("#name2").prop("value",$("#name1").prop("value"));
+				$("#addr2").prop("value",$("#addr1").prop("value"));
+			}else{
+				$("#name2").prop("value","");
+				$("#addr2").prop("value","");
+			}
+		});
+		$("#btn1").click(function(){
+			//var w=$("#img1").prop("width");
+			//var h=$("#img1").prop("height");
+			var w=$("#img1").width();
+			var h=$("#img1").height();
+			$("#img1").css({
+				width:w*2,
+				height:h*2
+			});
+		});
+	});
+</script>
+</head>
+<body>
+회원이름 <input type="text" id="name1"><br>
+회원주소 <input type="text" id="addr1"><br>
+<input type="checkbox" id="chk">위와 동일<br>
+받는사람 <input type="text" id="name2"><br>
+받는주소 <input type="text" id="addr2"><br>
+<input type="button" value="이미지2배크게하기" id="btn1"><br>
+<img src="images/1.png" id="img1" style="width:100px;height: 100px">
+</body>
+</html>

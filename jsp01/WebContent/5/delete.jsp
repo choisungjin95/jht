@@ -19,10 +19,10 @@
 	try{
 		Class.forName("oracle.jdbc.OracleDriver");
 		String url="jdbc:oracle:thin:@localhost:1521:xe";
-		con=DriverManager.getConnection(url, "scott", "tiger");
+		con=DriverManager.getConnection(url,"scott","tiger");
 		String sql="delete from members where num=?";
 		pstmt=con.prepareStatement(sql);
-		pstmt.setInt(1, num);
+		pstmt.setInt(1,num);
 		n=pstmt.executeUpdate();
 	}catch(ClassNotFoundException ce){
 		ce.printStackTrace();
@@ -30,20 +30,20 @@
 		se.printStackTrace();
 	}finally{
 		try{
-			if(con!=null) con.close();
 			if(pstmt!=null) pstmt.close();
+			if(con!=null) pstmt.close();
 		}catch(SQLException se){
 			se.printStackTrace();
-		}
+		}	
 	}
 	if(n>0){
 %>
 	<script type="text/javascript">
-		alert('삭제성공');
+		alert("삭제성공");
 		location.href="list.jsp";
 	</script>
 <%
-	}else {
+	}else{
 %>
 	<script type="text/javascript">
 		alert("삭제실패");
@@ -52,10 +52,20 @@
 <%
 	}
 %>
-<br>
-<a href="main.jsp">메인페이지로 이동</a>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

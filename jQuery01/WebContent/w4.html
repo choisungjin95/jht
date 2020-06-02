@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(window).ready(function(){
+		$("#btn").click(function(){
+			var w=$("#w").val();
+			var h=$("#h").val();
+			var color=$("#color").val();
+			$("#div").css({
+				width:w,
+				height:h,
+				backgroundColor:color
+			});
+		});
+	});
+</script>
+</head>
+<body>
+가로 <input type="text" id="w"><br>
+세로 <input type="text" id="h"><br>
+색상 <input type="text" id="color"><br>
+<input type="button" id="btn" value="적용"><br>
+<div id="div"></div>
+</body>
+</html>

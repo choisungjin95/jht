@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test03_quiz.html</title>
+<script type="text/javascript">
+var tot1=0;//전역변수
+function getSum(){
+	var tot2=0; //지역변수 (함수내에서만 사용가능-함수가 끝나면 사라짐)
+	var n1=document.getElementById("n1").value;
+	var n2=document.getElementById("n2").value;
+	var n3=document.getElementById("n3");
+	var sum=parseInt(n1) + parseInt(n2);
+	n3.value=sum;
+	tot1 += sum;
+	alert("전체합:"+ tot1);
+}
+</script>
+</head>
+<body>
+<!-- 두수합구하기 -->
+<input type="text" id="n1">+
+<input type="text" id="n2">=
+<input type="text" id="n3">
+<br>
+<input type="button" value="합구하기" onclick="getSum()">
+</body>
+</html>
+
+
+

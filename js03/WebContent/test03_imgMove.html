@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test03_imgMove.html</title>
+<style>
+	#img{position: relative;left:0px;top:10px;opacity:1;}
+</style>
+<script>	
+	var tid;
+	function gogo1(){
+		tid=setInterval(move1,200);
+	}
+	var pos=0;
+	function move1(){
+		pos += 50;
+		var img=document.getElementById("img");
+		img.style.left=pos +"px";
+		if(pos==1000){
+			clearInterval(tid);
+		}
+	}
+	var pos1=0;
+	var x=30;
+	function gogo2(){
+		setInterval(move2,100);
+	}
+	function move2(){
+		pos1 += x;
+		var img=document.getElementById("img");
+		img.style.left=pos1+"px";
+		if(pos1>=1000){
+			x=-30;
+		}
+		if(pos1<=0){
+			x=30;
+		}	
+	}
+</script>
+</head>
+<body>
+<input type="button" value="이미지이동1" onclick="gogo1()">
+<input type="button" value="이미지이동2" onclick="gogo2()">
+<br>
+<img src="images/1.png" id="img"><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

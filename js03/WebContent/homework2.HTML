@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script>
+	function dog(aaa){
+		var adog = document.getElementById("adog"); // 밑에 나오는 img
+	//	if(aaa.checked == true){
+			adog.src = aaa.value;
+	//	}
+	}
+</script>
+</head>
+<body>
+	<div id = "dogs">
+		강아지1 <input type = "radio" onclick = "dog(this)" name = "idog" checked = "checked" value = "images/dog1.jpg">
+		강아지2 <input type = "radio" onclick = "dog(this)" name = "idog" value = "images/dog2.jpg">
+		강아지3 <input type = "radio" onclick = "dog(this)" name = "idog" value = "images/dog3.jpg">
+		<br>
+		<img id = "adog" src = "images/dog1.jpg">
+	</div>
+	
+
+</body>
+</html>

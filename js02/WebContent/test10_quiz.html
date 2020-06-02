@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test10_quiz.html</title>
+<script>
+	function func(){
+		var birth=document.getElementById("birth").value;
+		var d=new Date(birth);
+		var sw=["일","월","화","수","목","금","토"];
+		var result=document.getElementById("result");
+		result.innerHTML="태어난요일:" + sw[d.getDay()] + "요일";
+	}
+</script>
+</head>
+<body>
+<!--태어난 년월일을 입력받아 태어난 요일 출력해 보세요. -->
+<input type="text" id="birth" value="2020/04/09">
+<input type="button" value="요일출력" onclick="func()">
+<div id="result">
+</div>
+</body>
+</html>
+

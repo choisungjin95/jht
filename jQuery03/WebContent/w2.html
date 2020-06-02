@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#wrap{
+		border:1px solid white;
+		width: 1000px;
+		height: 660px;
+		margin: auto;
+		background-color: #e4e4e4;
+	}
+	#div_imgs{
+		width: 900px;
+		height: 170px;
+		margin: auto;
+	    margin-top: 20px;
+		background-color: #bbb9b6;
+	}
+	#div_imgs img{
+		width: 200px;
+		height: 150px;
+		margin: 10px;
+	}
+	#div_img{
+		margin: auto;
+		margin-top:30px;
+		text-align: center;
+		position: relative;
+		width: 100%;
+		height: 400px;
+	}
+	#div_img img{
+		width: 600px;
+		height: 400px;
+	}
+	.text{
+		position: absolute;
+		font-size:1.8em;
+		left:420px; top:100px;
+		color: white;
+	}
+</style>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+</head>
+<body>
+<div id="wrap">
+	<div id="div_imgs">
+		<img src="images/1.jpg" class="img">
+		<img src="images/2.jpg" class="img">
+		<img src="images/3.jpg" class="img">
+		<img src="images/4.jpg" class="img">
+	</div>
+	<div id="div_img">
+	</div>
+</div>
+</body>
+<script type="text/javascript">
+	$(".img").hover(function(){
+		var img=$(this).attr("src");
+		$(this).css("opacity", "0.3");
+		$("#div_img").html("<img src='"+img+"'>'")
+		.css("display","none")
+		.fadeIn(1000);
+		if(img=='images/1.jpg'){
+			$("<div class='text'>1번이미지</div>")
+			.appendTo("#div_img")
+			.css("display","none")
+			.slideDown(2000);
+		}else if(img=='images/2.jpg'){
+			$("<div class='text'>2번이미지</div>")
+			.appendTo("#div_img")
+			.css("display","none")
+			.slideDown(2000);
+		}else if(img=='images/3.jpg'){
+			$("<div class='text'>3번이미지</div>")
+			.appendTo("#div_img")
+			.css("display","none")
+			.slideDown(2000);
+		}else if(img=='images/4.jpg'){
+			$("<div class='text'>4번이미지</div>")
+			.appendTo("#div_img")
+			.css("display","none")
+			.slideDown(2000);
+		}
+	},function(){
+		$(this).css("opacity", "1");
+		$("#div_img").html("");
+	});
+</script>
+</html>
