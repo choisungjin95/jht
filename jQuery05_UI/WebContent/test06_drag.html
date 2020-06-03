@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<style>
+	*{margin:0;padding:0}
+	#slide ul li img{width:200px;height: 260px;}
+	#slide ul li{list-style: none;float: left;}
+	#slidebox{width:1000px;height: 260px;position: relative;border:2px solid green;
+	overflow: hidden;left:200px;top:50px;}
+	#slide{width:2000px;height: 260px;position: absolute;left: 0px;}
+	#btnBox{position:relative;top: 100px;left: 500px;}	
+</style>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+</head>
+<body>
+<div id="slidebox">
+	<div id="slide">
+		<ul>
+			<li><img src="images/slide1.png"></li>
+			<li><img src="images/slide2.png"></li>
+			<li><img src="images/slide3.png"></li>
+			<li><img src="images/slide4.png"></li>
+			<li><img src="images/slide5.png"></li>
+			<li><img src="images/slide6.png"></li>
+			<li><img src="images/slide7.png"></li>
+			<li><img src="images/slide8.png"></li>
+			<li><img src="images/slide9.png"></li>
+			<li><img src="images/slide10.png"></li>
+		</ul>
+	</div>
+</div>
+<div id="btnBox">
+	<a href="#" id="btnPrev">이전이미지</a>
+	<a href="#" id="btnNext">다음이미지</a>
+</div>
+</body>
+<script type="text/javascript">
+	var n=0;
+	$("#slide").draggable({
+		axis: "x",
+		containment:[-800,0,200,0]
+	})
+	$("#btnBox a").button();
+	$("#btnPrev").click(function(e){
+		e.preventDefault();
+		var left=parseInt($("#slide").css("left"));
+		if(left>0) return;
+		left += 200;
+		//Math.floor(값) : 내림값구하기 Math.ceil(1.5)-->1 Math.floor(-1.5)-->-2
+		left=Math.floor(left/200.0)*200;
+		$("#slide").animate({left:left},500);
+	});
+	//다음이미지버튼을 누르면 다음 이미지가 보여지도록 해보세요.
+	$("#btnNext").click(function(e){
+		e.preventDefault();
+		var left=parseInt($("#slide").css("left"));
+		if(left<=-1000) return;
+		left -= 200;
+		//Math.Ceil(값) : 올림값구하기 Math.Ceil(1.5)-->2 Math.Ceil(-1.5)-->-1
+		left=Math.ceil(left/200.0)*200;
+		$("#slide").animate({left:left},500);
+	});
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+

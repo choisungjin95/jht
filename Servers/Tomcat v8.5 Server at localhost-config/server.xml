@@ -105,7 +105,7 @@
 				
 				
 				
-			<Context docBase="semiproject_instagram" path="/semiproject_instagram" reloadable="true" source="org.eclipse.jst.jee.server:semiproject_instagram"/><Context docBase="jQuery01" path="/jQuery01" reloadable="true" source="org.eclipse.jst.jee.server:jQuery01"/><Context docBase="jQuery02" path="/jQuery02" reloadable="true" source="org.eclipse.jst.jee.server:jQuery02"/><Context docBase="jQuery03" path="/jQuery03" reloadable="true" source="org.eclipse.jst.jee.server:jQuery03"/><Context docBase="jQuery04_ajax" path="/jQuery04_ajax" reloadable="true" source="org.eclipse.jst.jee.server:jQuery04_ajax"/><Context docBase="0601" path="/0601" reloadable="true" source="org.eclipse.jst.jee.server:0601"/><Context docBase="jQuery05_UI" path="/jQuery05_UI" reloadable="true" source="org.eclipse.jst.jee.server:jQuery05_UI"/></Host>
+			<Context docBase="ajax03_comments" path="/ajax03_comments" reloadable="true" source="org.eclipse.jst.jee.server:ajax03_comments"/><Context docBase="jQuery05_UI" path="/jQuery05_UI" reloadable="true" source="org.eclipse.jst.jee.server:jQuery05_UI"/><Context docBase="jQuery_0601" path="/jQuery_0601" reloadable="true" source="org.eclipse.jst.jee.server:jQuery_0601"/><Context docBase="jQuery_0602" path="/jQuery_0602" reloadable="true" source="org.eclipse.jst.jee.server:jQuery_0602"/><Context docBase="html5" path="/html5" reloadable="true" source="org.eclipse.jst.jee.server:html5"/></Host>
 		</Engine>
 	</Service>
 </Server>
